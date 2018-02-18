@@ -14,11 +14,11 @@ class ProjectMergeRequests extends BaseModel
     @get "projects/#{Utils.parseProjectId projectId}/merge_requests", params, (data) => fn data if fn
 
   notes: (projectId, mergerequestId, fn = null) =>
-    @debug "Projects::notesMergeRequest(#{projectId}, #{mergerequestId}, #{fn}))"
+    @debug "Projects::notesMergeRequest(#{projectId}, #{mergerequestId})"
     @get "projects/#{Utils.parseProjectId projectId}/merge_requests/#{parseInt mergerequestId}/notes", (data) => fn data if fn
 
   show: (projectId, mergerequestId, fn = null) =>
-    @debug "Projects::mergerequest(#{projectId}, #{mergerequestId}, #{fn})"
+    @debug "Projects::mergerequest(#{projectId}, #{mergerequestId})"
     @get "projects/#{Utils.parseProjectId projectId}/merge_request/#{parseInt mergerequestId}", (data) => fn data if fn
 
   add: (projectId, sourceBranch, targetBranch, assigneeId, title, fn = null) =>
