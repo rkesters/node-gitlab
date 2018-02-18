@@ -15,7 +15,7 @@ class ProjectMergeRequests extends BaseModel
 
   notes: (projectId, mergerequestId, fn = null) =>
     @debug "Projects::notesMergeRequest(#{projectId}, #{mergerequestId}, #{fn}))"
-    @get "projects/#{Utils.parseProjectId projectId}/merge_request/#{parseInt mergerequestId}/notes", (data) => fn data if fn
+    @get "projects/#{Utils.parseProjectId projectId}/merge_requests/#{parseInt mergerequestId}/notes", (data) => fn data if fn
 
   show: (projectId, mergerequestId, fn = null) =>
     @debug "Projects::mergerequest(#{projectId}, #{mergerequestId}, #{fn})"
